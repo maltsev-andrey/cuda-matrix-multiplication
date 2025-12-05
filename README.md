@@ -100,7 +100,7 @@ __global__ void matmul_shared(const float* A, const float* B, float* C,
 }
 ```
 
-**Impact**: ⭐⭐⭐ Foundation optimization - enables all further improvements
+**Impact**: Foundation optimization - enables all further improvements
 
 ---
 
@@ -122,7 +122,7 @@ __global__ void matmul_shared(const float* A, const float* B, float* C,
 - Better amortization of synchronization cost
 - Optimal for memory-bound scenarios
 
-**Impact**: ⭐⭐ Significant gain with minimal code change
+**Impact**: Significant gain with minimal code change
 
 ---
 
@@ -524,23 +524,21 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 ---
 
-## 📞 Support & Questions
+## Support & Questions
 
 For questions or discussions about this implementation:
 1. Review the [OPTIMIZATION_GUIDE.md](OPTIMIZATION_GUIDE.md) for detailed explanations
 2. Check [RESULTS.md](RESULTS.md) for complete benchmark data
 3. Open an issue on GitHub
-4. Contact: [your email]
+4. Contact: andrey.maltsev@gmail.com
 
 ---
 
 <div align="center">
 
-**⚡ Bottom Line ⚡**
+**Bottom Line**
 
-This project demonstrates **production-grade GPU programming skills**, achieving **6,436 GFLOPS** (69% of theoretical peak) through systematic optimization. Performance is competitive with industry-standard libraries (92% of cuBLAS), with a **379% improvement** over baseline through progressive optimization techniques.
-
-**Perfect for demonstrating GPU computing expertise in interviews and portfolio presentations.**
+This project **production-grade GPU programming skills**, achieving **6,436 GFLOPS** (69% of theoretical peak) through systematic optimization. Performance is competitive with industry-standard libraries (92% of cuBLAS), with a **379% improvement** over baseline through progressive optimization techniques.
 
 </div>
 
