@@ -8,11 +8,11 @@ High-performance GPU-accelerated matrix multiplication. Optimization techniques 
 
 ## Project Overview
 
-- ![Project Summary](cuda-matrix-multiplication/PROJECT_SUMMARY.md)
+- ![Project Summary](PROJECT_SUMMARY.md)
 
-- ![Optimisation Guide](cuda-matrix-multiplication/OPTIMIZATION_GUIDE.md)
+- ![Optimisation Guide](OPTIMIZATION_GUIDE.md)
 
-- ![Results](cuda-matrix-multiplication/RESULTS.md)
+- ![Results](RESULTS.md)
 
 This project implements matrix multiplication on GPU with three progressive optimization levels. CUDA programming concepts and achieving near-optimal performance through systematic optimization.
 
