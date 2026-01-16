@@ -8,6 +8,12 @@ High-performance GPU-accelerated matrix multiplication. Optimization techniques 
 
 ## Project Overview
 
+- ![Project Summary](cuda-matrix-multiplication/PROJECT_SUMMARY.md)
+
+- ![Optimisation Guide](cuda-matrix-multiplication/OPTIMIZATION_GUIDE.md)
+
+- ![Results](cuda-matrix-multiplication/RESULTS.md)
+
 This project implements matrix multiplication on GPU with three progressive optimization levels. CUDA programming concepts and achieving near-optimal performance through systematic optimization.
 
 ### Key Achievements
@@ -47,8 +53,8 @@ This project implements matrix multiplication on GPU with three progressive opti
 GFLOPS Performance (16K×16K matrices)
 
 6436 ├─────────────────────┐  ← Register Blocking (Final)
-     │                     │    ⚡ 69% of theoretical peak
-     │                     │    ⚡ 92% of cuBLAS efficiency
+     │                     │     69% of theoretical peak
+     │                     │     92% of cuBLAS efficiency
 2080 ├───────┐             │  ← Tile Size 32×32
      │       │             │    
 1732 ├──┐    │             │  ← Shared Memory 16×16
@@ -255,8 +261,8 @@ GPU Memory Hierarchy:
 ╔══════════════════════════════════════════════════════════╗
 ║ Memory Type    │ Latency    │ Bandwidth  │ Utilized      ║
 ╠══════════════════════════════════════════════════════════╣
-║ Registers      │ ~1 cycle   │ ~20 TB/s   │ ✓ Level 3     ║
-║ Shared Memory  │ ~5 cycles  │ ~15 TB/s   │ ✓ All         ║
+║ Registers      │ ~1 cycle   │ ~20 TB/s   │  Level 3     ║
+║ Shared Memory  │ ~5 cycles  │ ~15 TB/s   │  All         ║
 ║ L2 Cache       │ ~200 cyc   │ ~4 TB/s    │ Automatic     ║
 ║ Global Memory  │ ~400 cyc   │ 900 GB/s   │ Minimized     ║
 ╚══════════════════════════════════════════════════════════╝
@@ -295,11 +301,11 @@ Grid Configuration:
 **My Achievement**: 6,436 GFLOPS = **69% of peak**
 
 **Factors preventing 100% utilization**:
-1. **Memory access overhead** (~10%): Loading data from HBM2
-2. **Boundary conditions** (~5%): Edge cases and non-perfect tiles
-3. **Synchronization** (~5%): `__syncthreads()` calls between tiles
-4. **Register pressure** (~10%): Limited registers per thread
-5. **Instruction overhead** (~1%): Loop control, conditionals
+**Memory access overhead** (~10%): Loading data from HBM2
+**Boundary conditions** (~5%): Edge cases and non-perfect tiles
+**Synchronization** (~5%): `__syncthreads()` calls between tiles
+**Register pressure** (~10%): Limited registers per thread
+**Instruction overhead** (~1%): Loop control, conditionals
 
 **Industry Context**:
 - Naive implementations: 10-30% of peak
@@ -347,8 +353,8 @@ Optimization Strategy:
 |----------------------------|--------------------|-------------------|------------|
 | Naive CPU (single-core)    | ~0.5 GFLOPS        | Baseline          | 1×         |
 | Optimized CPU (multi-core) | ~20 GFLOPS         | 40 cores          | 40×        |
-| My Shared Memory          | 1,732 GFLOPS       | 18.6% of GPU peak | 3,464×     |
-| My Register Blocking      | **6,436 GFLOPS**   |**69% of GPU peak**|**12,872×** |
+| My Shared Memory           | 1,732 GFLOPS       | 18.6% of GPU peak | 3,464×     |
+| My Register Blocking       | **6,436 GFLOPS**   |**69% of GPU peak**|**12,872×** |
 | NVIDIA cuBLAS              | ~7,000 GFLOPS      | ~75% of GPU peak  | ~14,000×   |
 | **My  vs cuBLAS**          | **92% efficiency** | **Outstanding**   | -          |
 
@@ -373,7 +379,7 @@ ncu-ui matmul_profile.ncu-rep
 
 ### Key Metrics to Check
 
-| Metric                 | Target    | My Result |
+| Metric                 | Target    | My Result  |
 |------------------------|-----------|------------|
 | **Compute Throughput** | >6 TFLOPS | 6.4 TFLOPS |
 | **Memory Bandwidth**   | >500 GB/s | ~600 GB/s  |
@@ -470,7 +476,7 @@ Critical for:
 
 ---
 
-## 📝 References
+## References
 
 ### NVIDIA Documentation
 - [CUDA C Programming Guide](https://docs.nvidia.com/cuda/cuda-c-programming-guide/)
@@ -539,6 +545,11 @@ For questions or discussions about this implementation:
 **Bottom Line**
 
 This project **production-grade GPU programming skills**, achieving **6,436 GFLOPS** (69% of theoretical peak) through systematic optimization. Performance is competitive with industry-standard libraries (92% of cuBLAS), with a **379% improvement** over baseline through progressive optimization techniques.
+<<<<<<< HEAD
+=======
+
+**Perfect for demonstrating GPU computing expertise in interviews and portfolio presentations.**
+>>>>>>> 2c5a308 (Update README with some changes)
 
 </div>
 
