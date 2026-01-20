@@ -156,7 +156,7 @@ nvcc -O3 -arch=sm_60 -o matmul_mixed matmul_mixed_precision.cu
 
 **Status**: Complete | **Performance**: 6,590 GFLOPS (71% peak) | **Speedup**: Up to 5.75x
 
-**[Full Documentation](cuda-matmul-phase3/README.md)**
+**[Full Documentation](batched_gemm_phase3/README.md)**
 
 ### Key Concept
 
@@ -209,7 +209,7 @@ During large workload (`./matmul_batched 1024 2048 3072 32`):
 | File                                                                                   | Description          |
 |----------------------------------------------------------------------------------------|----------------------|
 | [`batched_gemm_phase3/src/matmul_batched.cu`](batched_gemm_phase3/src/matmul_batched.cu) | Batched GEMM kernels |
-| [`batched_gemm_phase3/tests/test_batched.py`](batched_gemm_phase3/tests/test_batched.py) | Test suite           |
+| [`batched_gemm_phase3/tests/test_batches.py`](batched_gemm_phase3/tests/test_batches.py) | Test suite           |
 
 ### Quick Start
 
