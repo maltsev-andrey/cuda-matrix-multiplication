@@ -46,7 +46,7 @@ High-performance GPU-accelerated matrix multiplication achieving **6,590 GFLOPS*
 | [**Base Implementation**](#base-implementation)          | Complete  | 6,436 GFLOPS  | Shared memory + register blocking |
 | [**Phase 1: Rectangular**](#phase-1-rectangular-matrices)| Complete  | Integrated    | Support for M!=N!=K               |
 | [**Phase 2: Mixed Precision**](cuda-matmul-phase2/README.md) | Complete  | 4,731 GFLOPS  | FP16/FP32 mixed precision         |
-| [**Phase 3: Batched GEMM**](batched_gemm_phase3/README.md)| Complete  | 6,590 GFLOPS  | Multiple matrix pairs per kernel  |
+| [**Phase 3: Batched GEMM**](cuda-matmul-phase3/README.md)| Complete  | 6,590 GFLOPS  | Multiple matrix pairs per kernel  |
 | [Phase 4: Tensor Cores](#phase-4-tensor-cores-future)    | o Future  | -             | Hardware FP16 acceleration        |
 | [Phase 5: Multi-GPU](#phase-5-multi-gpu-future)          | o Future  | -             | Distributed computing             |
 
@@ -156,7 +156,7 @@ nvcc -O3 -arch=sm_60 -o matmul_mixed matmul_mixed_precision.cu
 
 **Status**: Complete | **Performance**: 6,590 GFLOPS (71% peak) | **Speedup**: Up to 5.75x
 
-**[Full Documentation](batched_gemm_phase3/README.md)**
+**[Full Documentation](cuda-matmul-phase3/README.md)**
 
 ### Key Concept
 
@@ -208,8 +208,8 @@ During large workload (`./matmul_batched 1024 2048 3072 32`):
 
 | File                                                                                   | Description          |
 |----------------------------------------------------------------------------------------|----------------------|
-| [`batched_gemm_phase3/src/matmul_batched.cu`](batched_gemm_phase3/src/matmul_batched.cu) | Batched GEMM kernels |
-| [`batched_gemm_phase3/tests/test_batches.py`](batched_gemm_phase3/tests/test_batches.py) | Test suite           |
+| [`cuda-matmul-phase3/src/matmul_batched.cu`](cuda-matmul-phase3/src/matmul_batched.cu) | Batched GEMM kernels |
+| [`cuda-matmul-phase3/tests/test_batches.py`](cuda-matmul-phase3/tests/test_batches.py) | Test suite           |
 
 ### Quick Start
 
@@ -257,9 +257,10 @@ Distributed matrix multiplication using NCCL:
 
 | Document                                      | Description                     |
 |-----------------------------------------------|---------------------------------|
-| [**PROJECT_SUMMARY.md**](docs/PROJECT_SUMMARY.md)      | One-page project overview       |
+| [**PROJECT_SUMMARY.md**](docs/FINAL_PROJECT_SUMMARY.md)      | One-page project overview       |
 | [**OPTIMIZATION_GUIDE.md**](docs/OPTIMIZATION_GUIDE.md) | Detailed optimization techniques|
-| [**RESULTS.md**](docs/RESULTS.md)                      | Complete benchmark data         |
+| [**COMPARISON_ANALYSIS.md**](docs/COMPARISON_ANALYSIS.md) | Detailed comparasion analysis|
+| [**RESULTS.md**](docs/BENCHMARK_RESULTS.md)                      | Complete benchmark data         |
 
 ### Phase Documentation
 
@@ -267,8 +268,8 @@ Distributed matrix multiplication using NCCL:
 |---------------------------------------|--------------------------------------------|
 | [**Phase 2 README**](cuda-matmul-phase2/README.md)                     | Mixed precision overview and results       |
 | [**Phase 2 Technical**](cuda-matmul-phase2/docs/PHASE2_MIXED_PRECISION.md) | Deep dive into FP16/FP32 precision         |
-| [**Phase 3 README**](batched_gemm_phase3/README.md)                     | Batched GEMM overview and results          |
-| [**Phase 3 Technical**](batched_gemm_phase3/docs/PHASE3_BATCHED_GEMM.md) | Deep dive into batched operations          |
+| [**Phase 3 README**](cuda-matmul-phase3/README.md)                     | Batched GEMM overview and results          |
+| [**Phase 3 Technical**](cuda-matmul-phase3/docs/PHASE3_BATCHED_GEMM.md) | Deep dive into batched operations          |
 
 ---
 
