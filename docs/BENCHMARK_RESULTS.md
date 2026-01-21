@@ -133,7 +133,7 @@ The key insight: **32 separate kernel launches have overhead**. Better to launch
 
 ### Performance Results
 
-![Detailed Analysis Breakdown](benchmarks/charts/detailed_analysis_breakdown.png)
+![Detailed Analysis Breakdown](./charts/detailed_analysis_breakdown.png)
 
 #### Real-World Test Cases
 
